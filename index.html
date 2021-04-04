@@ -12,11 +12,71 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/1e8932ee32.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
-      <h1>Hellow world</h1>
-      <a href="" class="btn btn-primary">CLick Me</a>
+
+    <div class="weather-app">
+
+    <form id="weatherapp-form">
+    <div class="search-city">
+    <div class="row">
+      
+      <div class="col-9">
+      <input type="search" 
+      placeholder="Enter a city" 
+      class="form-control"
+      id="city-input"
+      /> 
+      </div>
+
+      <div class="col-3">
+      <input type="submit" class="form-control btn btn-primary" value="Search">
+      </input>
+      </div>
+      
+
+    </div>  
+    </div>
+    </form>
+
+    <br/>
+
+<div class="city">
+    LOS ANGELES
+  </div>
+  <p class="day-date-time">
+Sat 02/06 9:00 PM
+  </p>
+    <br/>
+
+    <div class="current-info">
+      <span id="weather-description">Clear</span> &nbsp;
+      <i class="fas fa-sun"></i> 
+      <span id="temp-now">20</span>° 
+      <br/>
+
+     <a href="#" id="celcius-link">°C </a>|<a href="###" id="fahrenheit-link">°F </a>   
+     <br />
+
+    </div>
+<br/>
+
+
+<small>
+          <a
+            href="https://github.com/michikosuwoto/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Michiko Suwoto
+        </small>
+
+
       <script src="src/app.js"></script>
     </div>
   </body>
