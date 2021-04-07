@@ -14,13 +14,15 @@
     />
     <script
       src="https://kit.fontawesome.com/1e8932ee32.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous" >
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
-
     <div class="weather-app">
+
+//
 
     <form id="weatherapp-form">
     <div class="search-city">
@@ -30,19 +32,19 @@
       <input type="search" 
       placeholder="Enter a city" 
       class="form-control"
-      id="city-input"
-      /> 
+      id="city-input"/> 
       </div>
 
       <div class="col-3">
       <input type="submit" class="form-control btn btn-primary" value="Search">
       </input>
       </div>
-      
 
     </div>  
     </div>
     </form>
+
+//
 
     <br/>
 
@@ -52,32 +54,38 @@
   <p class="day-date-time">
 Sat 02/06 9:00 PM
   </p>
+
+//
+
+<div class="current-weather">
+      <span id="weather-description">xxx</span>
+      <span id="temperature">20</span>° 
+     <a href="#" id="celcius-link">C </a>|<a href="###" id="fahrenheit-link">F </a>  
+</div>
+
+<div class="humidityandwind">
+    Humidity: <span id="humidity"> 888 </span> %
     <br/>
+    Wind: <span id="wind"> 999 </span> m/s
+</div>
 
-    <div class="current-info">
-      <span id="weather-description">Clear</span> &nbsp;
-      <i class="fas fa-sun"></i> 
-      <span id="temp-now">20</span>° 
-      <br/>
 
-     <a href="#" id="celcius-link">°C </a>|<a href="###" id="fahrenheit-link">°F </a>   
-     <br />
+//
 
-    </div>
 <br/>
-
-
+<div class="coder">
 <small>
           <a
             href="https://github.com/michikosuwoto/vanilla-weather-app"
-            target="_blank"
-            >Open-source code</a
-          >
+            target="_blank"> Open-source code</a>
           by Michiko Suwoto
-        </small>
+</small>
+</div>
 
 
       <script src="src/app.js"></script>
+
+    </div>
     </div>
   </body>
 </html>

@@ -1,3 +1,52 @@
-h1 {
-  color: blue;
+body {
+  background: url(https://images.unsplash.com/photo-1604960855642-9d5d651cf044?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1268&q=80)
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+.weather-app {
+  border: 1px solid;
+  border-color: transparent;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.row {
+  text-align: center;
+}
+
+.search-city {
+  padding: 20px;
+  text-align: center;
+}
+
+.city {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.day-date-time {
+  text-align: center;
+}
+
+.current-weather {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.humidityandwind {
+  text-align: center;
+}
+
+.coder {
+  text-align: center;
+}
+
+#weather-description {
+  text-transform: capitalize;
 }
