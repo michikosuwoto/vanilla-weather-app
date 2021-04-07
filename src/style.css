@@ -50,3 +50,7 @@ body {
 #weather-description {
   text-transform: capitalize;
 }
+
+.timestamp {
+  text-align: center;
+}
