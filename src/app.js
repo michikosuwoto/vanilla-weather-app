@@ -15,9 +15,9 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayTemperature(response) {
+function displayWeather(response) {
   console.log(response.data);
-  //document.querySelector(".city").innerHTML = response.data.name;
+  document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -36,13 +36,47 @@ function displayTemperature(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
 
-  //also need to activate fuction of getting forecast here
+  //also need to add fuction of getting forecast here
 
   let dateElement = document.querySelector(".day-date-time");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
-let apiKey = "3535582e190a7084b5cf1cb8af8b7750";
-//let city = document.querySelector(".city");
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "3535582e190a7084b5cf1cb8af8b7750";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
+
+let form = document.querySelector("#weatherapp-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Los Angeles");
+
+/*
+
+function searchCity(city) {
+  let apiKey = "3535582e190a7084b5cf1cb8af8b7750";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showWeatherCondition);
+}
+
+function handleClick(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
+}
+
+let searchButton = document.querySelector(".btn-primary");
+searchButton.addEventListener("click", handleClick);
+
+searchCity("San Francisco");
+
+*/
