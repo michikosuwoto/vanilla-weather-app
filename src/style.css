@@ -54,3 +54,7 @@ body {
 .timestamp {
   text-align: center;
 }
+
+.weather-icon {
+  text-align: center;
+}

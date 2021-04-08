@@ -17,16 +17,25 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
   console.log(response.data);
-  document.querySelector(".city").innerHTML = response.data.name;
+  //document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
+
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
 
-  //still need to get the icon for the weather description here
   //also need to activate fuction of getting forecast here
 
   let dateElement = document.querySelector(".day-date-time");
@@ -34,5 +43,6 @@ function displayTemperature(response) {
 }
 
 let apiKey = "3535582e190a7084b5cf1cb8af8b7750";
+//let city = document.querySelector(".city");
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
