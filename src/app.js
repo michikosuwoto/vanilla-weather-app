@@ -20,9 +20,12 @@ function displayWeather(response) {
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
+
+  celsiusTemperature = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    celsiusTemperature
   );
+
   document
     .querySelector("#icon")
     .setAttribute(
@@ -54,29 +57,28 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+celsiusTemperature = null;
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+
 let form = document.querySelector("#weatherapp-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Los Angeles");
-
-/*
-
-function searchCity(city) {
-  let apiKey = "3535582e190a7084b5cf1cb8af8b7750";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(showWeatherCondition);
-}
-
-function handleClick(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city);
-}
-
-let searchButton = document.querySelector(".btn-primary");
-searchButton.addEventListener("click", handleClick);
-
-searchCity("San Francisco");
-
-*/

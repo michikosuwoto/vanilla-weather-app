@@ -58,3 +58,25 @@ body {
 .weather-icon {
   text-align: center;
 }
+
+#celsius-link {
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#celsius-link:hover {
+  text-decoration: underline;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#fahrenheit-link:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  font-size: 17px;
+}
